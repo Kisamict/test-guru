@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Create question</h1>
+    <form class="" action="/tests/<%=@test.id%>/questions" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <p>
+        <label for="question_body">Body:</label>
+        <input id="question_body"type="text" name="question[body]" value="">
+      </p>
+      <input type="submit" name="" value="create">
+    </form>
+  </body>
+</html>
