@@ -1,0 +1,21 @@
+<div class="container-center">
+  <h2><%= @test.title %> questions:</h2>
+  <table class='table-center'>
+    <tr>
+      <th>Id</th>
+      <th>Body</th>
+      <th colspan="2">Actions</th>
+    </tr>
+    <% @test.questions.each do |question| %>
+      <tr>
+        <td><%= question.id %></td>
+        <td style='text-align: left;'><%= question.body %></td>
+        <td><%= link_to 'edit', edit_question_path(question) %></td>
+        <td><%= link_to 'delete', question_path(question), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+  <br><br>
+  <%= link_to 'Back', :tests %>
+</div>

@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Create question</h1>
-    <form class="" action="/tests/<%=@test.id%>/questions" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <p>
-        <label for="question_body">Body:</label>
-        <input id="question_body"type="text" name="question[body]" value="">
-      </p>
-      <input type="submit" name="" value="create">
-    </form>
-  </body>
-</html>
+<div class="container-center">
+  <h1> Create question for <%= @test.title %> </h1>
+  <%= form_for [@test, @question] do |form| %>
+    <p>
+      <%= form.hidden_field :test_id, value: @test.id %>
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+      <%= form.submit %>
+    </p>
+  <% end %>
+  <%= link_to 'Back', test_path(@test) %>
+</div>
