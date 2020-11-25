@@ -1,0 +1,14 @@
+<div class="container-center">
+  <h1>Test: <%= @question.test.title %></h1>
+  <h3>Question: </h3>
+  <p><%= @question.body %></p>
+
+  <h3>Answers:</h3>
+
+  <ol class='table-center'><%= render @question.answers %></ol>
+
+  <br>
+  <%= link_to 'New answer', new_question_answer_path(@question) %> 
+  <br><br>
+  <%= link_to 'Back', test_path(@question.test) %>
+</div>

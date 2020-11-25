@@ -13,6 +13,7 @@
         <td>
           <span><%= link_to 'edit', edit_question_path(question) %></span>
           <span><%= link_to 'delete', question_path(question), method: :delete, data: { confirm: "Are you sure?" } %></span>
+          <span><%= link_to 'delete', question_path(question), method: :delete, data: { confirm: "Are you sure?" } %></span>
         </td>
       </tr>
     <% end %>

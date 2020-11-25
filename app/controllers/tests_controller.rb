@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: %i[show edit update destroy]
+  before_action :set_test, only: %i[show edit update destroy start]
+  before_action :set_user, only: %i[start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :test_not_found
 
@@ -29,7 +30,7 @@ class TestsController < ApplicationController
     @test = Test.new(test_params)
 
     if @test.save
-      redirect_to @test
+      redirect_to tests_path
     else
       render :new
     end
@@ -41,6 +42,13 @@ class TestsController < ApplicationController
     else
       render plain: 'Woops! Something went wrong'
     end
+  end
+
+  def start
+    @user.tests.push(@test)
+    
+    # этот метод реализован в модели пользователя
+    redirect_to @user.test_passage(@test)
   end
 
   private
@@ -55,5 +63,9 @@ class TestsController < ApplicationController
 
   def set_test
     @test = Test.find(params[:id])
+  end
+
+  def set_user
+    @user = User.first
   end
 end
