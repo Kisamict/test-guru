@@ -1,5 +1,5 @@
 <div class="container-center">
-  <h1> Edit question </h1>
+  <h1> <%= question_header(@question) %> </h1>
   <%= form_for @question do |form| %>
     <p>
       <%= form.label :body %>

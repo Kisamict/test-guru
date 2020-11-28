@@ -1,6 +1,6 @@
 module ApplicationHelper
   def footer_year
-    Date.today.year
+    Time.zone.now.year
   end
 
   def github_link(title, link)

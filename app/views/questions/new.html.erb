@@ -1,5 +1,5 @@
 <div class="container-center">
-  <h1> Create question for <%= @test.title %> </h1>
+  <h1> <%= question_header(@question) %> </h1>
   <%= form_for [@test, @question] do |form| %>
     <p>
       <%= form.hidden_field :test_id, value: @test.id %>
