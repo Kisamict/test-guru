@@ -5,6 +5,10 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
+  
+  def count_percent
+    100.0 / test.questions.count * correct_questions
+  end
 
   def completed?
     current_question.nil? 

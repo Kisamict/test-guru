@@ -1,6 +1,8 @@
 <div class="container-center">
   <h1>You are passing the <%= @test_passage.test.title %> test</h1>
 
+  <h2> Question: <%= @test_passage.current_question.id%>/<%=@test_passage.test.questions.count%> </h2>
+
   <b>
     <%= @test_passage.current_question.body %>
   </b>
