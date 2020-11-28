@@ -28,11 +28,12 @@ class TestPassage < ApplicationRecord
     self.current_question = test.questions.first if test.present? 
   end
 
-  def correct_answer?(answer_ids) 
-    correct_answers_count = correct_answers.count 
+  def before_update_set_next_question
+    self.current_question = next_question
+  end
 
-    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    (correct_answers_count == answer_ids.count)
+  def correct_answer?(answer_ids) 
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answers
@@ -41,12 +42,5 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-  def before_update_set_next_question
-    
-    self.current_question = next_question
-
-    p '!!!!!!! DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG. END!!!!!!!!!'
   end
 end

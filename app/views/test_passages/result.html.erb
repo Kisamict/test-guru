@@ -1,9 +1,9 @@
 <div class="container-center">
   <%if @test_passage.count_percent >= 85%>
-    <h2 style="color: green;"><%="Тест пройден"%></h2>
+    <h2 class='test-passed'><%="Test passed"%></h2>
   <%else%>
-    <h2 style="color: red;"><%="Test provalen"%></h2>
+    <h2 class='test-not-passed'><%="Test not passed"%></h2>
   <%end%>
   <br><br>
-  <%= link_to 'Back', tests_path %>
+  <%= link_to 'Back to tests', tests_path %>
 </div>

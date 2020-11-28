@@ -1,10 +1,6 @@
 <div class="container-center">
   <h1>New Answer</h1>
-
   <p><%= @question.body %></p>
-
   <%= render 'form', answer: @answer %>
-
   <%= link_to 'Back', question_path(@question) %>
-
 </div>
