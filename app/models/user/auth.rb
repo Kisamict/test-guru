@@ -1,5 +1,4 @@
 module User::Auth
-
   extend ActiveSupport::Concern
 
   attr_reader :password
