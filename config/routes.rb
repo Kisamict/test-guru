@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'tests#index'
 
   get "/signup", to: "users#new"
-
+  get "/login", to: 'sessions#new'
+  delete "/logout", to: "sessions#destroy"
+  
+  resources :sessions, only: :create
   resources :users, only: :create
 
   resources :tests do

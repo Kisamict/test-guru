@@ -26,6 +26,7 @@ module User::Auth
   private
 
   def digest(password_string)
-    Digest::SHA1.hexdigest(password_string )
+    Digest::SHA1.hexdigest(password_string)
   end
+  
 end
