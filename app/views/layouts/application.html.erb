@@ -9,6 +9,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
     <% if logged_in? %>
       <h2><%= link_to 'Test Guru', '/' %></h2>
       <p>Welcome, <%= current_user.fname %>-Guru!</p>
@@ -23,7 +24,14 @@
       </p>
 =======
 >>>>>>> Lesson 10 homework
+=======
+    <% if user_signed_in? %>
+      <p style="text-align: right; padding: 20px;">
+      Welcome, <%= current_user.email %> | <%= link_to 'logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure want to log out?' } %> 
+      </p>
+>>>>>>> lesson 11, part 3
     <% end %>
+    <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
