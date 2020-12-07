@@ -1,5 +1,6 @@
 class Admin::TestsController < Admin::BaseController
-before_action :set_test, only: %i[show start]
+
+  before_action :set_test, only: %i[show edit update destroy start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :test_not_found
 
@@ -19,17 +20,17 @@ before_action :set_test, only: %i[show start]
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_tests_path, notice: "'#{@test.title}' test was updated!"
     else
       render :edit
     end
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.authored_tests.new(test_params)
 
     if @test.save
-      redirect_to tests_path
+      redirect_to admin_tests_path, notice: "'#{@test.title}' test was created"
     else
       render :new
     end
@@ -37,7 +38,7 @@ before_action :set_test, only: %i[show start]
 
   def destroy
     if @test.destroy
-      redirect_to tests_path
+      redirect_to admin_tests_path
     else
       render plain: 'Woops! Something went wrong'
     end
@@ -57,5 +58,9 @@ before_action :set_test, only: %i[show start]
 
   def set_test
     @test = Test.find(params[:id])
+  end
+
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end

@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   before_action :set_test, only: %i[index new create]
   before_action :set_question, only: %i[destroy edit update show]
 
@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question.update(question_params)
-    redirect_to test_path(@question.test)
+    redirect_to admin_test_path(@question.test)
   end
 
   def new
@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to admin_test_path(@test)
     else
-      redirect_to new_test_question_path(@test)
+      redirect_to new_admin_test_question_path(@test)
     end
   end
 
@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
     if @question.destroy
       redirect_to admin_test_path(@question.test)
     else
-      render plain: 'Woops! Something went wrong'
+      redirect_to admin_test_path, alert: 'Something went wrong'
     end
   end
 

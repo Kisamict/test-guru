@@ -7,7 +7,7 @@
   <ol class='table-center'><%= render @question.answers %></ol>
 
   <br>
-  <%= link_to 'New answer', new_question_answer_path(@question) %> 
+  <%= link_to 'New answer', new_admin_question_answer_path(@question) %> 
   <br>
   <%= link_to 'Back', admin_test_path(@question.test) %>
 </div>

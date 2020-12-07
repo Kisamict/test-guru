@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def resource_not_found
     render plain: '404: Resource not found'
   end 
+
+  def after_sign_in_path_for(resource)
+    resource.is_a?(Admin) ? admin_tests_path : root_path
+  end
 end
