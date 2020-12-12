@@ -2,8 +2,6 @@ class QuestionsController < ApplicationController
   before_action :set_test, only: %i[index new create]
   before_action :set_question, only: %i[destroy edit update show]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :resource_not_found
-
   def edit
   end
 
@@ -46,9 +44,5 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body)
-  end
-
-  def resource_not_found
-    render plain: '404: Resource not found'
   end
 end

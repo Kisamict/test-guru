@@ -2,8 +2,6 @@ class TestsController < ApplicationController
   before_action :set_test, only: %i[show edit update destroy start]
   before_action :set_user, only: %i[start]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :test_not_found
-
   def index
     @tests = Test.all
   end
@@ -45,16 +43,12 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
+    @user.tests << @test
     
     redirect_to @user.test_passage(@test)
   end
 
   private
-
-  def test_not_found
-    render plain: "404: Test not found!"
-  end
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
