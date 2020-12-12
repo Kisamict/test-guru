@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  
   skip_before_action :authenticate_user!
 
   def new
@@ -21,5 +21,4 @@ class SessionsController < ApplicationController
     reset_session
     render :new
   end
-
 end
