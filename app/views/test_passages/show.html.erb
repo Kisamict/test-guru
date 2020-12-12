@@ -1,6 +1,6 @@
 <div class="container-center">
-  <h1>You are passing the <%= @test_passage.test.title %> test</h1>
-  <h2>Question: <%= @test_questions.index(@test_passage.current_question) + 1 %>/<%= @test_questions.count %></h2>
+  <h1><%= t('pages.test_passages.show.header', title: @test_passage.test.title) %></h1>
+  <h2><%= t('pages.test_passages.show.question_counter') %> <%= @test_questions.index(@test_passage.current_question) + 1 %>/<%= @test_questions.count %></h2>
 
   <b><%= @test_passage.current_question.body %></b>
 

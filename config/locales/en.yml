@@ -21,3 +21,35 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+  buttons: 
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+  pages:
+    tests:
+      index:
+        header: "All tests"
+        questions_count: "Questions count"
+        actions: "Actions"
+        start: "Start"
+        new_test: "Create new test"
+        confirm: "Are you sure want to delete the test?"
+      show: 
+        title: "%{test} questions:"
+      new: 
+        header: "New test"
+      edit:
+        header: "Edit test"
+    test_passages:
+      show:
+        header: "You are passing #%{title} test"
+        question_counter: 'Question:'
+      result: 
+        passed: "Congratulations! You passed the test!"
+        failed: "We are sorry. Test failed.."

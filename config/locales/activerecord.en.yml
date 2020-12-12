@@ -1,0 +1,19 @@
+en: 
+  activerecord:
+    models:
+      test: "Test"
+      user: "User"
+    attributes:
+      test: 
+        title: "Title"
+        category_id: "Category"
+        level: "Level"
+        author_id: "Author"
+      user: 
+        fname: "First name"
+        lname: "Last name"
+    errors:
+      messages:
+        blank: "Can't be blank"
+
+        

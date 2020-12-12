@@ -1,5 +1,5 @@
 <div class="container-center">
-  <h2><%= @test.title %> questions:</h2>
+  <h2><%= t('pages.tests.show.title', test: @test.title) %></h2>
   <table class='table-center'>
     <tr>
       <th>Id</th>
@@ -22,5 +22,5 @@
   </table>
   <%= link_to 'New question', new_admin_test_question_path(@test) %>
   <br><br>
-  <%= link_to 'Back', admin_tests_path %>
+  <%= link_to t('buttons.back'), admin_tests_path %>
 </div>

@@ -1,0 +1,19 @@
+ru: 
+  activerecord:
+    models:
+      test: "Тест"
+      user: "Пользователь"
+    attributes:
+      test: 
+        title: "Название"
+        category_id: "Категория"
+        level: "Уровень"
+        author_id: "Автор"
+      user:
+        fname: "Имя"
+        lname: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+    errors:
+      messages:
+        blank: "Не может быть пустым"

@@ -4,12 +4,4 @@ module TestsHelper
   def test_level(test)
     TEST_LEVELS[test.level] || :hero
   end
-
-  def test_header(test)
-    if test.new_record? 
-      "Create test"
-    else
-      "Edit test: #{test.title}"
-    end
-  end
 end
