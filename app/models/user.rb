@@ -1,9 +1,13 @@
-class User < ApplicationRecord
+class User < ApplicationRecord 
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id'
 
-  validates :fname, :lname, :email,  presence: true
+  has_secure_password
+
+  validates :fname, :lname, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
