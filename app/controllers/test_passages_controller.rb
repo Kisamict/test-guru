@@ -16,7 +16,7 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
-  end
+  endв
 
   private 
 
