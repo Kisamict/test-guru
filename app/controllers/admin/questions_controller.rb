@@ -1,7 +1,7 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :set_test, only: %i[index new create]
+  before_action :set_test, only: %i[new create]
   before_action :set_question, only: %i[destroy edit update show]
-
+  
   def edit
   end
 

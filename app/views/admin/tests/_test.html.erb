@@ -6,11 +6,9 @@
   <td>
     <span><%= link_to 'show', admin_test_path(test) %></span>
     <span><%= link_to 'edit', edit_admin_test_path(test) %></span>
-    <span><%= link_to 'delete',
-                                admin_test_path(test),
+    <span><%= link_to 'delete', admin_test_path(test),
                                 method: :delete,
                                 data: { confirm: 'Are you sure?' } %>
     </span>
-    <span><%= button_to 'Start', start_test_path(test) %></td></span>
   </td>
 </tr>

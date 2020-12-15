@@ -6,19 +6,7 @@
       <th>Body</th>
       <th>Actions</th>
     </tr>
-    <% @test.questions.each do |question| %>
-      <tr>
-        <td><%= question.id %></td>
-        <td><%= question.body %></td>
-        <td>
-          <span><%= link_to 'show', admin_question_path(question) %></span>
-          <span><%= link_to 'edit', edit_admin_question_path(question) %></span>
-          <span><%= link_to 'delete', admin_question_path(question), method: :delete,
-                                                                     data: { confirm: "Are you sure?" } %>
-          </span>
-        </td>
-      </tr>
-    <% end %>
+    <%= render @test.questions %>
   </table>
   <%= link_to 'New question', new_admin_test_question_path(@test) %>
   <br><br>

@@ -38,7 +38,7 @@ answers = Answer.create(
 
 users = User.create(
   [
-    {fname: 'Jon', lname: 'Doe', email: 'Jondoe@example.com'},
-    {fname: 'Don', lname: 'Joe', email: 'Donjoe@example.com'}
+    {first_name: 'Jon', last_name: 'Doe', email: 'Jondoe@example.com'},
+    {first_name: 'Don', last_name: 'Joe', email: 'Donjoe@example.com'}
   ]
 )

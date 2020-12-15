@@ -1,8 +1,6 @@
 <div class="container-center">
   <%= render 'shared/errors', resource: @test %>
-
   <h1><%= test_header(@test) %></h1>
-
   <%= form_for [:admin, @test] do |form| %>
     <p>
       <%= form.label :title %><br>
@@ -20,6 +18,5 @@
       <%= form.submit %>
     </p>
   <% end %>
-  
   <p><%= link_to 'Back', admin_tests_path %></p>
 </div>

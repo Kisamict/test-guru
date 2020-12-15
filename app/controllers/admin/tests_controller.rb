@@ -1,8 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-
   before_action :set_test, only: %i[show edit update destroy start]
-
-  rescue_from ActiveRecord::RecordNotFound, with: :test_not_found
 
   def index
     @tests = Test.all
@@ -45,16 +42,12 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def start
-    current_user.tests.push(@test)
+    current_user.tests << @test
 
     redirect_to current_user.test_passage(@test)
   end
 
   private
-
-  def test_not_found
-    render plain: "404: Test not found!"
-  end
 
   def set_test
     @test = Test.find(params[:id])
