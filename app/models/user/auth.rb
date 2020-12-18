@@ -1,5 +1,4 @@
 module User::Auth
-
   extend ActiveSupport::Concern
 
   attr_reader :password
@@ -28,5 +27,4 @@ module User::Auth
   def digest(password_string)
     Digest::SHA1.hexdigest(password_string)
   end
-  
 end

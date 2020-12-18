@@ -1,0 +1,14 @@
+<div class='container-center'>
+  <h1>All tests:</h1>
+  <table class='table-center'>
+    <tr>
+      <th>Title</th>
+      <th>Id</th>
+      <th>Level</th>
+      <th>Questions count</th>
+      <th>Actions</th>
+    </tr>
+    <%= render @tests %>  
+  </table>
+  <p><%= link_to 'New test', new_admin_test_path %></p>
+</div>

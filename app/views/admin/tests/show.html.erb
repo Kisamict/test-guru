@@ -1,0 +1,14 @@
+<div class="container-center">
+  <h2><%= @test.title %> questions:</h2>
+  <table class='table-center'>
+    <tr>
+      <th>Id</th>
+      <th>Body</th>
+      <th>Actions</th>
+    </tr>
+    <%= render @test.questions %>
+  </table>
+  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <br><br>
+  <%= link_to 'Back', admin_tests_path %>
+</div>

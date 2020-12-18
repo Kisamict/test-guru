@@ -1,0 +1,22 @@
+<div class="container-center">
+  <%= render 'shared/errors', resource: @test %>
+  <h1><%= test_header(@test) %></h1>
+  <%= form_for [:admin, @test] do |form| %>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
+    <p>
+      <%= form.label :level %><br>
+      <%= form.number_field :level %>
+    </p>
+    <p>
+      <%= form.label :category_id %>:
+      <%= form.collection_select :category_id, Category.all, :id, :title, promt: true  %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+  <p><%= link_to 'Back', admin_tests_path %></p>
+</div>
