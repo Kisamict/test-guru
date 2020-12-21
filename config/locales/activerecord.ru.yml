@@ -10,8 +10,8 @@ ru:
         level: "Уровень"
         author_id: "Автор"
       user:
-        fname: "Имя"
-        lname: "Фамилия"
+        first_name: "Имя"
+        last_name: "Фамилия"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
     errors:

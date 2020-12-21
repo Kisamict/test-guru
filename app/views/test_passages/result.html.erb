@@ -1,14 +1,9 @@
 <div class="container-center">
-  <% if @test_passage.count_percent >= 85 %>
-    <h2 class='test-passed'><%="Test passed"%></h2>
-  <% else %>
-    <h2 class='test-not-passed'><%="Test not passed"%></h2>
-  <% end %>
   <%if @test_passage.count_percent >= 85%>
     <h2 class='test-passed'><%= t('pages.test_passages.result.passed') %></h2>
   <%else%>
     <h2 class='test-not-passed'><%= t('pages.test_passages.result.failed') %></h2>
   <%end%>
   <br><br>
-  <%= link_to 'Back to tests', tests_path %>
+  <%= link_to t('pages.test_passages.result.back'), tests_path %>
 </div>

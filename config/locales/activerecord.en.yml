@@ -10,8 +10,8 @@ en:
         level: "Level"
         author_id: "Author"
       user: 
-        fname: "First name"
-        lname: "Last name"
+        first_name: "First name"
+        last_name: "Last name"
     errors:
       messages:
         blank: "Can't be blank"
