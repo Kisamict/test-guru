@@ -1,6 +1,5 @@
 en:
   hello: "Hello"
-  log_out: "Log out"
   helpers:
     submit:
       test:
@@ -12,18 +11,19 @@ en:
     delete: "Delete"
     back: "Back"
     logout: "Logout"
+    next: 'Next'
+    start: "Start"
+    create_question: "Create new question"
+    create_test: "Create new test"
   pages:
     tests:
       index:
         header: "All tests"
         questions_count: "Questions count"
         actions: "Actions"
-        start: "Start"
-        new_test: "Create new test"
         confirm: "Are you sure want to delete the test?"
       show: 
         title: "%{test} questions:"
-        create_question: "Create new question"
       new: 
         header: "New test"
       edit:
@@ -32,7 +32,6 @@ en:
       show:
         header: "You are passing #%{title} test"
         question_counter: 'Question:'
-        next: 'Next'
       result: 
         passed: "Congratulations! You passed the test!"
         failed: "We are sorry. Test failed.."

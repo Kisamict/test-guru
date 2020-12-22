@@ -1,12 +1,15 @@
 ru:
   hello: "Привет"
-  log_out: "Выйти"
   buttons: 
     show: "Показать"
     edit: "Редактировать"
     delete: "Удалить"
     back: "Назад"
     logout: "Выйти"
+    next: "Далее"
+    start: "Начать"
+    create_question: "Создать новый вопрос"
+    create_test: "Создать новый тест"
   helpers:
     submit:
       test:
@@ -23,12 +26,9 @@ ru:
         header: "Все тесты"
         questions_count: "Количество вопросов"
         actions: "Действия"
-        start: "Начать"
-        new_test: "Создать новый тест"
         confirm: "Вы уверены что хотите удалить тест?"
       show: 
         title: "Вопросы по тесту: %{test}"
-        create_question: "Создать новый вопрос"
       new:
         header: "Новый тест"
       edit:
@@ -37,7 +37,6 @@ ru:
       show:
         header: "Вы проходите тест #%{title}"    
         question_counter: 'Вопрос:'
-        next: "Далее"
       result:
         passed: "Поздравляем! Вы прошли тест!"
         failed: "К сожалению, тест не пройден..."
