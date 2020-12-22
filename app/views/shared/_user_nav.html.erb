@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <div class="nav user">
+    <h2><%= link_to 'Test Guru', tests_path %></h2>
+    Welcome, <%= current_user.first_name %>-Guru! |
+    <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>

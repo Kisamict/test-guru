@@ -9,11 +9,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <h2><%= link_to 'Test Guru', '/' %></h2>
-      <p>Welcome, <%= current_user.first_name %>-Guru!</p>
-      <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+    <%= render 'shared/user_nav' %>
     <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'shared/footer' %>
