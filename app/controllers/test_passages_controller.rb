@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show result update]
+  before_action :set_test_passage, only: %i[show result update gist]
   before_action :test_questions, only: %i[show update]
 
   def show
@@ -18,6 +18,18 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    response = GistQuestionService.new(@test_passage.current_question).call
+
+    flash_option = if response.success? 
+      { notice: "Test was saved into gist repository" }
+    else
+      { alert: "Something went wrong!" }
+    end
+
+    redirect_to @test_passage, flash_option
   end
 
   private 
