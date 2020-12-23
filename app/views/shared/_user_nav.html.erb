@@ -1,7 +1,21 @@
-<% if user_signed_in? %>
-  <div class="nav user">
-    <h2><%= link_to 'Test Guru', tests_path %></h2>
-    Welcome, <%= current_user.first_name %>-Guru! |
-    <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-<% end %>
+<nav class="navbar navbar-dark bg-dark">
+  <%= link_to 'Test Guru', root_path, class: "navbar-brand" %>
+  <% if current_user.is_a?(Admin) %>
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-item">
+        <%= link_to t('admin.nav.admin_panel'), admin_tests_path, class: "nav-link" %>
+      </li>
+    </ul>
+  <% end %>
+  <% if user_signed_in? %>
+    <span class="navbar-text">
+      <%= t('hello') %>, <%= current_user.first_name %> Guru! |
+      <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+  <% else %>
+    <span class="navbar-text">
+      <%= link_to t('buttons.login'), new_user_session_path %> |
+      <%= link_to t('buttons.sign_up'), new_user_registration_path %>
+    </span>
+  <% end %>
+</nav>

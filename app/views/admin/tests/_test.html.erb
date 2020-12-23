@@ -1,15 +1,15 @@
 <tr>
-  <td><%= test.title %></td>
+  <th><%= test.title %></td>
   <td><%= test.id %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
   <td>
-    <span><%= link_to t('buttons.show'), admin_test_path(test) %></span>
-    <span><%= link_to t('buttons.edit'), edit_admin_test_path(test) %></span>
+    <span><%= link_to t('buttons.show'), admin_test_path(test), class: "btn btn-success" %></span>
+    <span><%= link_to t('buttons.edit'), edit_admin_test_path(test), class: "btn btn-warning" %></span>
     <span><%= link_to t('buttons.delete'), admin_test_path(test),
-                                           method: :delete,
-                                           data: { confirm: t('pages.tests.index.confirm') } %>
+                                          class: "btn btn-danger",
+                                          method: :delete,
+                                          data: { confirm: t('pages.tests.index.confirm') } %>
     </span>
-    <span><%= button_to t('buttons.start'), start_test_path(test) %></td></span>
   </td>
 </tr>

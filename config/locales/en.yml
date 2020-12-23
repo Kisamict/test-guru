@@ -15,6 +15,8 @@ en:
     start: "Start"
     create_question: "Create new question"
     create_test: "Create new test"
+    login: "Login"
+    sign_up: "Sign up"
   pages:
     tests:
       index:
@@ -39,3 +41,4 @@ en:
   admin: 
     nav:
       header: "Test Guru Admin panel" 
+      admin_panel: "Admin panel"
