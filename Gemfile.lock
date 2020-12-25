@@ -67,6 +67,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (1.1.0)
@@ -112,6 +116,9 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.10-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    octokit (4.19.0)
+      faraday (>= 0.9)
+      sawyer (~> 0.8.0, >= 0.5.3)
     orm_adapter (0.5.0)
     popper_js (1.16.0)
     public_suffix (4.0.6)
@@ -172,6 +179,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sawyer (0.8.2)
+      addressable (>= 2.3.5)
+      faraday (> 0.8, < 2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -225,11 +235,13 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.0)
+  dotenv-rails
   faraday
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
   listen (~> 3.0.5)
+  octokit (~> 4.0)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)

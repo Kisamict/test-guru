@@ -1,5 +1,8 @@
 ru:
   hello: "Привет"
+  gists:
+    description: "Вопрос по тесту #%{test_title}. Test Guru."
+
   buttons: 
     show: "Показать"
     edit: "Редактировать"
@@ -12,6 +15,7 @@ ru:
     create_test: "Создать новый тест"
     login: "Войти"
     sign_up: "Зарегистрироваться"
+
   helpers:
     submit:
       test:
@@ -22,6 +26,7 @@ ru:
         title: 'Название'
         category_id: 'Категория'
         level: 'Уровень'
+
   pages:
     tests:
       index:
@@ -43,7 +48,11 @@ ru:
         passed: "Поздравляем! Вы прошли тест!"
         failed: "К сожалению, тест не пройден..."
         back: "Вернуться к тестам"
+      gist:
+        success: "Gist успешно сохранён в репозиторий. %{href}"
+        failure: "Во время сохранения произошла ошибка!"
+
   admin: 
     nav:
       header: "Административаня панель Test Guru"
-      admin_panel: "Панель администратора"
+      admin_panel: "Панель администратора |"

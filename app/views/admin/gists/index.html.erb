@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col mt-5">
+    <h1>Gists</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.models.question') %></th>
+          <th>Url</th>
+          <th><%= t('activerecord.models.user') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @gists.each do |gist| %>
+          <tr>
+            <td><%= link_to gist.question.body.truncate(25), admin_question_path(gist.question) %></td>
+            <td><%= link_to nil, gist.url, target: "_blank" %></td>
+            <td><%= gist.user.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

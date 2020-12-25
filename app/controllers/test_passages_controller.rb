@@ -22,11 +22,13 @@ class TestPassagesController < ApplicationController
 
   def gist
     response = GistQuestionService.new(@test_passage.current_question).call
-
-    flash_option = if response.success? 
-      { notice: "Test was saved into gist repository" }
+  
+    flash_option = if response.blank? 
+      { alert: t('pages.test_passages.gist.failure') }
     else
-      { alert: "Something went wrong!" }
+      current_user.gists.create(question: @test_passage.current_question, url: response.html_url)
+      
+      { notice: t('pages.test_passages.gist.success', href: response.html_url) }
     end
 
     redirect_to @test_passage, flash_option
