@@ -9,20 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @test.questions.each do |question| %>
-        <tr>
-          <th><%= question.id %></td>
-          <td><%= question.body %></td>
-          <td>
-            <span><%= link_to t('buttons.show'), admin_question_path(question), class: "btn btn-success" %></span>
-            <span><%= link_to t('buttons.edit'), edit_admin_question_path(question), class: "btn btn-warning" %></span>
-            <span><%= link_to t('buttons.delete'), admin_question_path(question), class: "btn btn-danger",
-                                                                      method: :delete,
-                                                                      data: { confirm: "Are you sure?" } %>
-            </span>
-          </td>
-        </tr>
-      <% end %>
+      <%= render @test.questions %>
     </tbody>
   </table>
   <%= link_to t('buttons.back'), admin_tests_path, class: "btn btn-primary" %>

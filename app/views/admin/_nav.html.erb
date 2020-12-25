@@ -3,6 +3,6 @@
   <span class="navbar-text mr-auto"><b><%= t('admin.nav.admin_panel') %></b></span>
   <span class="navbar-text">
     <%= t('hello') %>, <b><%= current_user.email %></b> |
-    <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete %>
+    <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %>
   </span>
 </nav>
