@@ -1,14 +1,26 @@
 <div class="container-center">
-  <h2><%= @test.title %> questions:</h2>
+  <h2><%= t('pages.tests.show.title', test: @test.title) %></h2>
   <table class='table-center'>
     <tr>
       <th>Id</th>
       <th>Body</th>
       <th>Actions</th>
     </tr>
-    <%= render @test.questions %>
+    <% @test.questions.each do |question| %>
+      <tr>
+        <td><%= question.id %></td>
+        <td><%= question.body %></td>
+        <td>
+          <span><%= link_to 'show', admin_question_path(question) %></span>
+          <span><%= link_to 'edit', edit_admin_question_path(question) %></span>
+          <span><%= link_to 'delete', admin_question_path(question), method: :delete,
+                                                                     data: { confirm: "Are you sure?" } %>
+          </span>
+        </td>
+      </tr>
+    <% end %>
   </table>
-  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <%= link_to t('buttons.create_question'), new_admin_test_question_path(@test) %>
   <br><br>
-  <%= link_to 'Back', admin_tests_path %>
+  <%= link_to t('buttons.back'), admin_tests_path %>
 </div>

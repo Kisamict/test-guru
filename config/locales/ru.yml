@@ -1,2 +1,46 @@
 ru:
-  hello: "Привет мир"
+  hello: "Привет"
+  buttons: 
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    back: "Назад"
+    logout: "Выйти"
+    next: "Далее"
+    start: "Начать"
+    create_question: "Создать новый вопрос"
+    create_test: "Создать новый тест"
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: 'Название'
+        category_id: 'Категория'
+        level: 'Уровень'
+  pages:
+    tests:
+      index:
+        header: "Все тесты"
+        questions_count: "Количество вопросов"
+        actions: "Действия"
+        confirm: "Вы уверены что хотите удалить тест?"
+      show: 
+        title: "Вопросы по тесту: %{test}"
+      new:
+        header: "Новый тест"
+      edit:
+        header: "Редактировать тест"
+    test_passages:
+      show:
+        header: "Вы проходите тест #%{title}"    
+        question_counter: 'Вопрос:'
+      result:
+        passed: "Поздравляем! Вы прошли тест!"
+        failed: "К сожалению, тест не пройден..."
+        back: "Вернуться к тестам"
+  admin: 
+    nav:
+      header: "Административаня панель Test Guru"

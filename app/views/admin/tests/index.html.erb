@@ -1,14 +1,14 @@
 <div class='container-center'>
-  <h1>All tests:</h1>
+  <h1><%= t('pages.tests.index.header') %></h1>
   <table class='table-center'>
     <tr>
-      <th>Title</th>
+      <th><%= t('activerecord.attributes.test.title') %></th>
       <th>Id</th>
-      <th>Level</th>
-      <th>Questions count</th>
-      <th>Actions</th>
+      <th><%= t('activerecord.attributes.test.level') %></th>
+      <th><%= t('pages.tests.index.questions_count') %></th>
+      <th><%= t('pages.tests.index.actions') %></th>
     </tr>
     <%= render @tests %>  
   </table>
-  <p><%= link_to 'New test', new_admin_test_path %></p>
+  <p><%= link_to t('buttons.create_test'), new_admin_test_path %></p>
 </div>
