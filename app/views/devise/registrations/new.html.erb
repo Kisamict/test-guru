@@ -7,7 +7,7 @@
         <div class="form-group">
 
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <p>
+            <p id='test'>
               <%= f.label :first_name %>
               <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
             </p>
@@ -24,9 +24,24 @@
               <%= f.label :password %>
               <% if @minimum_password_length %>
               <em><%= t('devise.registrations.minimum_password_length', length: @minimum_password_length) %></em>
-              <% end %><br />
+              <% end %>
               <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
             </p>
+        <%#     <p class="confirmation-message"></p> %>
+
+            <%# Один из способов как добавть иконку к полю:  
+            <div class="form-group">
+              <label class="control-label" for="email">
+                Email
+              </label>
+              <div class="input-group">
+                <div class="input-group-text">
+                  @
+                </div>
+                <input class="form-control" id="email" name="email" type="text"/>
+              </div>
+            </div>
+            %>
 
             <p>
               <%= f.label :password_confirmation %><br />

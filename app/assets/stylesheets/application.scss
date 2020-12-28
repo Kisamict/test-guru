@@ -1,4 +1,7 @@
 @import "bootstrap";
+@import "typography/icons";
+@import 'font_awesome5.css';
+@import "global";
  
 body {
   margin: 0;
@@ -21,4 +24,8 @@ body {
 
 .test-not-passed {
   color: red;
+}
+
+.fontpassword {
+  position: relative;
 }
