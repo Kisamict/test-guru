@@ -1,12 +1,11 @@
 @import "bootstrap";
 @import "typography/icons";
-@import 'font_awesome5.css';
+@import 'font_awesome5';
 @import "global";
  
 body {
   margin: 0;
 }
-
 
 .container-center {
   margin: 10%; 
@@ -24,8 +23,4 @@ body {
 
 .test-not-passed {
   color: red;
-}
-
-.fontpassword {
-  position: relative;
 }
