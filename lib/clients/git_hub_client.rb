@@ -1,3 +1,4 @@
+=begin
 class GitHubClient
   ROOT_ENDPOINT = "https://api.github.com"
   ACCESS_TOKEN = ""
@@ -20,3 +21,4 @@ class GitHubClient
     Faraday.new(url: ROOT_ENDPOINT)
   end
 end
+ =end
