@@ -1,0 +1,24 @@
+@import "bootstrap";
+ 
+body {
+  margin: 0;
+}
+
+
+.container-center {
+  margin: 10%; 
+  text-align: center;
+}
+
+.table-center {
+  margin: 0 auto; 
+  width: 35%
+}
+
+.test-passed {
+  color: green;
+}
+
+.test-not-passed {
+  color: red;
+}

@@ -3,7 +3,6 @@
   <td><%= test.id %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
-  <td>
-    <span><%= button_to t('buttons.start'), start_test_path(test) %></td></span>
+  <td><%= button_to t('buttons.start'), start_test_path(test), class: "btn btn-success" %></td>
   </td>
 </tr>

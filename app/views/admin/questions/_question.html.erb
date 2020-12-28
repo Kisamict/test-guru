@@ -1,12 +1,12 @@
 <tr>
-  <td><%= question.id %></td>
+  <th><%= question.id %></td>
   <td><%= question.body %></td>
   <td>
-    <span><%= link_to 'show', admin_question_path(question) %></span>
-    <span><%= link_to 'edit', edit_admin_question_path(question) %></span>
-    <span><%= link_to 'delete', admin_question_path(question),
-                                method: :delete,
-                                data: { confirm: "Are you sure?" } %>
+    <span><%= link_to t('buttons.show'), admin_question_path(question), class: "btn btn-success" %></span>
+    <span><%= link_to t('buttons.edit'), edit_admin_question_path(question), class: "btn btn-warning" %></span>
+    <span><%= link_to t('buttons.delete'), admin_question_path(question), class: "btn btn-danger",
+                                                              method: :delete,
+                                                              data: { confirm: "Are you sure?" } %>
     </span>
   </td>
 </tr>

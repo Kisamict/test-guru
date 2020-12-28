@@ -1,13 +1,19 @@
-<div class='container-center'>
-  <h1><%= t('pages.tests.index.header') %></h1>
-  <table class='table-center'>
-    <tr>
-      <th><%= t('activerecord.attributes.test.title') %></th>
-      <th>Id</th>
-      <th><%= t('activerecord.attributes.test.level') %></th>
-      <th><%= t('pages.tests.index.questions_count') %></th>
-      <th><%= t('pages.tests.index.actions') %></th>
-    </tr>
-    <%= render @tests %>  
-  </table>
+<div class="row">
+  <div class='col mt-5'>
+    <h1><%= t('pages.tests.index.header') %></h1>
+    <table class='table table-bordered table-hover text-center'>
+      <thead class="thead-dark">
+        <tr>
+          <th><%= t('activerecord.attributes.test.title') %></th>
+          <th>Id</th>
+          <th><%= t('activerecord.attributes.test.level') %></th>
+          <th><%= t('pages.tests.index.questions_count') %></th>
+          <th><%= t('pages.tests.index.actions') %></th>
+        </tr>  
+      </thead>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
+    </table>
+  </div>
 </div>
