@@ -1,0 +1,6 @@
+<%= form_for [:admin, test], url: update_inline_admin_test_path(test), local: true do |f| %>
+  <div class="form-inline hide" data-test-id=<%= test.id %>>
+    <%= f.text_field :title, class: "form-control mr-2 mb-2" %>
+    <%= f.submit 'OK', class: "btn btn-primary" %>
+  </div>
+<% end %>
