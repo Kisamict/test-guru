@@ -1,5 +1,6 @@
 <li>
   <%= answer.body %>
+  <%= answer.correct? %>
   <%= link_to 'show', admin_answer_path(answer) %>
   <%= link_to 'edit', edit_admin_answer_path(answer) %>
   <%= link_to 'delete', admin_answer_path(answer),

@@ -24,3 +24,9 @@ body {
 .test-not-passed {
   color: red;
 }
+
+.progress-bar {
+  display: inline-block; 
+  height: 5px;
+  background-color: rgb(62, 202, 43);
+}
