@@ -21,11 +21,22 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      answer: 
+        create: "Создать ответ"
+        update: "Обновить ответ"
+      question: 
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
     label:
       test:
         title: 'Название'
         category_id: 'Категория'
         level: 'Уровень'
+
+  controllers: 
+    test_passages:
+      update: 
+        alert: "Вы должны выбрать хотя бы один ответ."
 
   pages:
     tests:
@@ -34,6 +45,7 @@ ru:
         questions_count: "Количество вопросов"
         actions: "Действия"
         confirm: "Вы уверены что хотите удалить тест?"
+        alert: "Для данного теста вопросов пока нет!"
       show: 
         title: "Вопросы по тесту: %{test}"
       new:
@@ -51,6 +63,11 @@ ru:
       gist:
         success: "Gist успешно сохранён в репозиторий. %{href}"
         failure: "Во время сохранения произошла ошибка!"
+    questions: 
+      new: 
+        header:  "Новый вопрос для теста: #%{test_title}" 
+      edit: 
+        header: "Редактировать вопрос по тесту #%{test_title}" 
 
   admin: 
     nav:

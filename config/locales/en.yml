@@ -8,6 +8,12 @@ en:
       test:
         create: "Create test"
         update: "Update test"
+      answer: 
+        create: "Create answer"
+        update: "Update answer"
+      question: 
+        create: "Create question"
+        update: "Update question"
 
   buttons: 
     show: "Show"
@@ -22,6 +28,11 @@ en:
     login: "Login"
     sign_up: "Sign up"
 
+  controllers: 
+    test_passages:
+      update: 
+        alert: "You must select at least one answer!"
+
   pages:
     tests:
       index:
@@ -29,6 +40,7 @@ en:
         questions_count: "Questions count"
         actions: "Actions"
         confirm: "Are you sure want to delete the test?"
+        alert: "No questions for that test yet!"
       show: 
         title: "%{test} questions:"
       new: 
@@ -46,7 +58,11 @@ en:
       gist:
         success: "Gist was successfully saved into repository. %{url}"
         failure: "Error occurred during saving!"
-
+    questions: 
+      new: 
+        header: "New question for #%{test_title} test"  
+      edit: 
+        header: "Edit #%{test_title} question"
   admin: 
     nav:
       header: "Test Guru Admin panel" 

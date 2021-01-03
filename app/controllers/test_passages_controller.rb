@@ -9,6 +9,8 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    return redirect_to test_passage_path, alert: I18n.t("controllers.test_passages.update.alert") unless params[:testpassage]
+
     @test_passage.accept!(params[:testpassage][:answer_ids])
 
     if @test_passage.completed?

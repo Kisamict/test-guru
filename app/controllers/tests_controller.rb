@@ -6,9 +6,12 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests << @test
-
-    redirect_to current_user.test_passage(@test)
+    if @test.questions.empty?
+      redirect_to tests_path, alert: I18n.t('pages.tests.index.alert')
+    else
+      current_user.tests << @test
+      redirect_to current_user.test_passage(@test)
+    end
   end
 
   private

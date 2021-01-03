@@ -1,14 +1,14 @@
-<div class="row">
-  <div class="col mt-4">
-    
-    <%= content_tag :span,
-                    nil,
-                    class: "progress-bar my-2", 
-                    data: {
-                      question_count: @test_passage.test.questions.count,
-                      question_number: @test_questions.index(@test_passage.current_question) + 1
-                    } %>
-  
+<div class="row justify-content-center">
+ 
+  <%= content_tag :span,
+              nil,
+              class: "progress-bar mt-4", 
+              data: {
+                question_count: @test_passage.test.questions.count,
+                question_number: @test_questions.index(@test_passage.current_question) + 1
+              } %>
+
+  <div class="col col-md-8 mt-4">  
     <div class="card">
       <h2 class="card-header"><%= t('pages.test_passages.show.header', title: @test_passage.test.title) %></h2>
       <div class="card-body">

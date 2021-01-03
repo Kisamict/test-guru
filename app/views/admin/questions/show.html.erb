@@ -1,13 +1,31 @@
-<div class="container-center">
-  <h1>Test: <%= @question.test.title %></h1>
-  <h3>Question: </h3>
-  <p><%= @question.body %></p>
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="card my-4">
+      <h1 class="card-header">Test: <%= @question.test.title %></h1>
+      <div class="card-body">
+        <h3>Question: </h3>
+        <p><%= @question.body %></p>        
+      </div>
+    </div>
+  </div>
+</div>
 
-  <h3>Answers:</h3>
-  <ol class='table-center'><%= render @question.answers %></ol>
-
-  <br>
-  <%= link_to 'New answer', new_admin_question_answer_path(@question) %> 
-  <br>
-  <%= link_to 'Back', admin_test_path(@question.test) %>
+<div class="row">
+  <div class="col">
+    <h3>Answers:</h3>
+    <table class="table table-bordered text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>Body</th>
+          <th>Correct</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @question.answers %>
+      </tbody>
+    </table>
+    <%= link_to t("buttons.back"), admin_test_path(@question.test), class: "btn btn-primary" %>
+    <%= link_to t("buttons.create_question"), new_admin_question_answer_path(@question), class: "btn btn-success" %> 
+  </div>
 </div>

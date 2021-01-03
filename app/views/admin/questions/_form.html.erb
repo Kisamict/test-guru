@@ -1,11 +1,17 @@
-<div class="container-center">
-  <h1><%= question_header(@question) %></h1>
-  <%= form_for [:admin, @test, @question] do |form| %>
-    <p>
-      <%= form.label :body %>
-      <%= form.text_field :body %>
-      <%= form.submit %>
-    </p>
-  <% end %>
-  <%= link_to 'Back', admin_test_path(@question.test) %>
+<div class="row justify-content-center">
+  <div class="col col-md-8 my-4">
+    <div class="card">
+      <h2 class="card-header"><%= question_header(@question) %></h2>
+      <div class="card-body">
+        <div class="form-group">
+          <%= form_for [:admin, @test, @question] do |form| %>
+            <p><%= form.text_area :body, rows: 7, class: "form-control" %></p>
+
+            <%= link_to t('buttons.back'), admin_test_path(@question.test), class: "btn btn-primary" %>
+            <%= form.submit class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

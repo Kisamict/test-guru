@@ -1,3 +1,5 @@
+admins = Admin.create(first_name: "admin", last_name: "admin", email: 'admin@example.com', password: "123456")
+
 categories = Category.create(
   [
     {title: 'Frontend'},
@@ -33,12 +35,5 @@ answers = Answer.create(
     {body: 'Yes', question_id: questions[2].id},
     {body: 'No', correct: true, question_id: questions[3].id},
     {body: 'Yes', question_id: questions[3].id}
-  ]
-)
-
-users = User.create(
-  [
-    {first_name: 'Jon', last_name: 'Doe', email: 'Jondoe@example.com'},
-    {first_name: 'Don', last_name: 'Joe', email: 'Donjoe@example.com'}
   ]
 )
