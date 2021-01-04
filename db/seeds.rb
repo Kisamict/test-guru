@@ -1,5 +1,3 @@
-admins = Admin.create(first_name: "admin", last_name: "admin", email: 'admin@example.com', password: "123456")
-
 categories = Category.create(
   [
     {title: 'Frontend'},
