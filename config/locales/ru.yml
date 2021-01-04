@@ -13,6 +13,7 @@ ru:
     start: "Начать"
     create_question: "Создать новый вопрос"
     create_test: "Создать новый тест"
+    create_answer: "Создать ответ"
     login: "Войти"
     sign_up: "Зарегистрироваться"
     send: "Отправить"

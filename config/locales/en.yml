@@ -25,6 +25,7 @@ en:
     start: "Start"
     create_question: "Create new question"
     create_test: "Create new test"
+    create_answer: "Create answer"
     login: "Login"
     sign_up: "Sign up"
     send: "Send"
