@@ -12,6 +12,7 @@
       <%= t('hello') %>, <%= current_user.first_name %> Guru! |
       <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
     </span>
+    <%= render 'shared/feedback' %>
   <% else %>
     <span class="navbar-text">
       <%= link_to t('buttons.login'), new_user_session_path %> |

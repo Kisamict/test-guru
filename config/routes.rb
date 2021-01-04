@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'tests#index'
+  
+  post :feedback, to: "home#feedback"
 
   devise_for :users,
              path: :gurus,
