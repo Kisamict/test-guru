@@ -27,6 +27,8 @@ en:
     create_test: "Create new test"
     login: "Login"
     sign_up: "Sign up"
+    send: "Send"
+    feedback: "Feedback"
 
   controllers: 
     test_passages:
@@ -34,6 +36,11 @@ en:
         alert: "You must select at least one answer!"
 
   pages:
+    feedback: 
+      header: "Send us your feedback!"
+      message: "Your message:"
+      sent: "Your message has been sent"
+      error: "An error has occurred!"
     tests:
       index:
         header: "All tests"

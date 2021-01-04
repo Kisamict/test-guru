@@ -1,4 +1,4 @@
-class FeedbackMailer < ApplicationMailer 
+class FeedbackMailer < ApplicationMailer
   def send_feedback(user, feedback_params)
     @admin = Admin.first
     @email = user.email
