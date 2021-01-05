@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col-4 mt-5">
+  <div class="col-sm col-md-6 col-lg-4 mt-5">
     <h2>Log in</h2>
     <div class="card my-3">
       <div class="card-body">
@@ -8,12 +8,10 @@
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
           </p>
-
           <p>
             <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
           </p>
-
           <% if devise_mapping.rememberable? %>
             <div class="form-check">
               <%= f.label :remember_me, class: "form-check-label" do  %>
@@ -22,13 +20,10 @@
               <% end %>
             </div>
           <% end %>
-
           <%= f.submit "Log in", class: "btn btn-primary mt-2" %>
-      
         <% end %>
       </div>
     </div>
-
     <%= render "devise/shared/links" %>
   </div>
 </div>

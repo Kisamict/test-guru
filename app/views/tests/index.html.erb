@@ -1,23 +1,25 @@
 <div class="row">
   <div class='col mt-5'>
     <h1><%= t('pages.tests.index.header') %></h1>
-    <table class='table table-bordered table-hover text-center'>
-      <thead class="thead-dark">
-        <tr>
-          <th class="sort-by-title pointer">
-            <%= t('activerecord.attributes.test.title') %>
-            <%= fa_icon 'arrow-up', class: "text-success hide" %>
-            <%= fa_icon 'arrow-down', class: "text-success hide" %>
-          </th>
-          <th>Id</th>
-          <th><%= t('activerecord.attributes.test.level') %></th>
-          <th><%= t('pages.tests.index.questions_count') %></th>
-          <th><%= t('pages.tests.index.actions') %></th>
-        </tr>  
-      </thead>
-      <tbody>
-        <%= render @tests %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class='table table-bordered table-hover text-center'>
+        <thead class="thead-dark">
+          <tr>
+            <th class="sort-by-title pointer">
+              <%= t('activerecord.attributes.test.title') %>
+              <%= fa_icon 'arrow-up', class: "text-success hide" %>
+              <%= fa_icon 'arrow-down', class: "text-success hide" %>
+            </th>
+            <th>Id</th>
+            <th><%= t('activerecord.attributes.test.level') %></th>
+            <th><%= t('pages.tests.index.questions_count') %></th>
+            <th><%= t('pages.tests.index.actions') %></th>
+          </tr>  
+        </thead>
+        <tbody>
+          <%= render @tests %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

@@ -2,20 +2,22 @@
   <div class='col mt-5'>
     <%= render 'shared/errors', resource: @test %>
     <h1><%= t('pages.tests.index.header') %></h1>
-    <table class='table table-bordered table-hover text-center'>
-      <thead class="thead-dark">
-        <tr>
-          <th><%= t('activerecord.attributes.test.title') %></th>
-          <th>Id</th>
-          <th><%= t('activerecord.attributes.test.level') %></th>
-          <th><%= t('pages.tests.index.questions_count') %></th>
-          <th><%= t('pages.tests.index.actions') %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @tests %>  
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class='table table-bordered table-hover text-center'>
+        <thead class="thead-dark">
+          <tr>
+            <th><%= t('activerecord.attributes.test.title') %></th>
+            <th>Id</th>
+            <th><%= t('activerecord.attributes.test.level') %></th>
+            <th><%= t('pages.tests.index.questions_count') %></th>
+            <th><%= t('pages.tests.index.actions') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @tests %>  
+        </tbody>
+      </table>
+    </div>
     <%= link_to t('buttons.create_test'), new_admin_test_path, class: "btn btn-primary" %>
   </div>
 </div>
