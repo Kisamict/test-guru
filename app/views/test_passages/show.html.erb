@@ -1,13 +1,12 @@
-  <%= content_tag :span,
-              nil,
-              class: "progress-bar mt-4", 
-              data: {
-                question_count: @test_passage.test.questions.count,
-                question_number: @test_questions.index(@test_passage.current_question) + 1
-              } %>
-<div class="row justify-content-center">
- 
+<%= content_tag :span,
+            nil,
+            class: "progress-bar mt-4", 
+            data: {
+              question_count: @test_passage.test.questions.count,
+              question_number: @test_questions.index(@test_passage.current_question) + 1
+            } %>
 
+<div class="row justify-content-center">
   <div class="col col-md-8 mt-4">  
     <div class="card">
       <h2 class="card-header"><%= t('pages.test_passages.show.header', title: @test_passage.test.title) %></h2>
@@ -26,7 +25,7 @@
               <%= b.label for: "answer_id_#{b.object.id}"%>
             </p>
           <% end %>
-          <%= link_to 'save question', gist_test_passage_path(@test_passage), method: :post, class: "btn btn-warning" %>
+          <%= link_to t('buttons.save'), gist_test_passage_path(@test_passage), method: :post, class: "btn btn-warning" %>
           <%= f.submit t('buttons.next'), class: "btn btn-success" %>
         <% end %>
       </div>

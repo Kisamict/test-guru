@@ -30,6 +30,7 @@ en:
     sign_up: "Sign up"
     send: "Send"
     feedback: "Feedback"
+    save: "Save"
 
   controllers: 
     test_passages:

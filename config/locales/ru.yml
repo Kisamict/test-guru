@@ -18,6 +18,7 @@ ru:
     sign_up: "Зарегистрироваться"
     send: "Отправить"
     feedback: "Обратная связь"
+    save: "Сохранить"
 
   helpers:
     submit:
