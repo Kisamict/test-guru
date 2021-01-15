@@ -1,6 +1,16 @@
-<nav class="navbar navbar-dark bg-dark ">
-  <%= link_to 'Test Guru', root_path, class: "navbar-brand" %> 
-  <span class="navbar-text mr-auto"><b><%= t('admin.nav.admin_panel') %></b></span>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+  <%= link_to 'Test Guru', root_path, class: "navbar-brand" %>
+  
+  <ul class="navbar-nav flex-row mr-auto">
+    <li class="nav-item">
+      <%= link_to "gists", admin_gists_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "tests", admin_tests_path, class: "nav-link" %>
+    </li>
+  </ul>
+
+  <span class="navbar-text mr-3"><b><%= t('admin.nav.admin_panel') %></b></span>
   <span class="navbar-text">
     <%= t('hello') %>, <b><%= current_user.email %></b> |
     <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %>

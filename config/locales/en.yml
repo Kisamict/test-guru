@@ -1,10 +1,14 @@
 en:
   hello: "Hello"
+  gists: 
+    description: "A question about #%{test_title} test from Test Guru."
+
   helpers:
     submit:
       test:
         create: "Create test"
         update: "Update test"
+
   buttons: 
     show: "Show"
     edit: "Edit"
@@ -17,6 +21,7 @@ en:
     create_test: "Create new test"
     login: "Login"
     sign_up: "Sign up"
+
   pages:
     tests:
       index:
@@ -38,7 +43,11 @@ en:
         passed: "Congratulations! You passed the test!"
         failed: "We are sorry. Test failed.."
         back: "Back to tests"
+      gist:
+        success: "Gist was successfully saved into repository. %{url}"
+        failure: "Error occurred during saving!"
+
   admin: 
     nav:
       header: "Test Guru Admin panel" 
-      admin_panel: "Admin panel"
+      admin_panel: "Admin panel |"
