@@ -32,6 +32,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'faraday'
 gem 'octokit', '~> 4.0'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'font_awesome5_rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
