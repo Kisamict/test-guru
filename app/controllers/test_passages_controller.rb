@@ -6,6 +6,11 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    @test_passage.update(passed: true) if @test_passage.count_percent >= 80
+
+    if AssignBadgeService.new(@test_passage).call
+      flash[:notice] = I18n.t('pages.test_passages.result.new_award')
+    end
   end
 
   def update
@@ -15,7 +20,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
-      
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

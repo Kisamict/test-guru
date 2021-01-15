@@ -12,19 +12,22 @@
         </li>
       </ul>
     <% end %>
-    <div class="nav-item ml-auto">
-      <% if user_signed_in?  %>
-        <span class="navbar-text">
-          <%= t('hello') %>, <%= current_user.first_name %> Guru! |
-          <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </span>
-        <%= render 'shared/feedback' %>
-      <% else %>
-        <span class="navbar-text">
-          <%= link_to t('buttons.login'), new_user_session_path %> |
-          <%= link_to t('buttons.sign_up'), new_user_registration_path %>
-        </span>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to t('nav.items.badge'), badges_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <span class="navbar-text ml-auto">
+        <%= t('hello') %>, <%= current_user.first_name %> Guru! |
+        <%= link_to t('buttons.logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </span>
+      <%= render 'shared/feedback' %>
+    <% else %>
+      <span class="navbar-text">
+        <%= link_to t('buttons.login'), new_user_session_path %> |
+        <%= link_to t('buttons.sign_up'), new_user_registration_path %>
+      </span>
+    <% end %>
   </div>
 </nav>

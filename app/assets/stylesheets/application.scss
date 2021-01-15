@@ -20,3 +20,8 @@ body {
   height: 5px;
   background-color: rgb(62, 202, 43);
 }
+
+.not-achieved {
+  opacity: 0.4;
+  filter: grayscale(75%);
+}

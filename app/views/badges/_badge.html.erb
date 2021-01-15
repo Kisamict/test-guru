@@ -1,0 +1,12 @@
+<div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+  <div class="card my-2">
+    <h4 class="card-header">
+      <%= badge.title %>
+      <%= badge_icon(badge) %>
+    </h4>
+    <div class="card-body text-center">
+      <%= image_tag badge.image_url, class: "w-100 #{badge_img_class(badge)}" %>
+      <p class="mt-3"><%= t("pages.badges.index.#{badge.awarding_rule}") %></p>
+    </div>
+  </div>
+</div>

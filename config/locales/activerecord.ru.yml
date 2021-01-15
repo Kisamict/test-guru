@@ -4,6 +4,7 @@ ru:
       test: "Тест"
       user: "Пользователь"
       question: "Вопрос"
+      badge: "Значок"
     attributes:
       test: 
         title: "Название"
@@ -15,6 +16,9 @@ ru:
         last_name: "Фамилия"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      badge:
+        title: "Название"
+        image_url: "Ссылка на изображение"
     errors:
       messages:
         blank: "Не может быть пустым"

@@ -1,0 +1,20 @@
+<div class="form-group">
+  <%= form_for [:admin, badge] do |f| %>
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", autofocus: true %>
+      </p>
+      <p>
+        <%= f.label :image_url %>
+        <%= f.text_field :image_url, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.select :awarding_rule,
+                     options_for_select(Badge.awarding_rules.keys),
+                     {},
+                     { class: "form-control" } %>
+      </p>
+      <%= link_to t("buttons.back"), admin_badges_path, class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-success" %>
+  <% end %>
+</div>

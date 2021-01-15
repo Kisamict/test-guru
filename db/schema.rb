@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201223152906) do
+ActiveRecord::Schema.define(version: 20210106182741) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.string   "body",                        null: false
@@ -18,7 +21,15 @@ ActiveRecord::Schema.define(version: 20201223152906) do
     t.integer  "question_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "title",                     null: false
+    t.string   "image_url",                 null: false
+    t.integer  "awarding_rule", default: 0, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -33,8 +44,8 @@ ActiveRecord::Schema.define(version: 20201223152906) do
     t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["question_id"], name: "index_gists_on_question_id"
-    t.index ["user_id"], name: "index_gists_on_user_id"
+    t.index ["question_id"], name: "index_gists_on_question_id", using: :btree
+    t.index ["user_id"], name: "index_gists_on_user_id", using: :btree
   end
 
   create_table "questions", force: :cascade do |t|
@@ -42,7 +53,7 @@ ActiveRecord::Schema.define(version: 20201223152906) do
     t.integer  "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_questions_on_test_id"
+    t.index ["test_id"], name: "index_questions_on_test_id", using: :btree
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -50,11 +61,12 @@ ActiveRecord::Schema.define(version: 20201223152906) do
     t.integer  "user_id"
     t.integer  "current_question_id"
     t.integer  "correct_questions",   default: 0
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
-    t.index ["test_id"], name: "index_test_passages_on_test_id"
-    t.index ["user_id"], name: "index_test_passages_on_user_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "passed",              default: false, null: false
+    t.index ["current_question_id"], name: "index_test_passages_on_current_question_id", using: :btree
+    t.index ["test_id"], name: "index_test_passages_on_test_id", using: :btree
+    t.index ["user_id"], name: "index_test_passages_on_user_id", using: :btree
   end
 
   create_table "tests", force: :cascade do |t|
@@ -64,8 +76,17 @@ ActiveRecord::Schema.define(version: 20201223152906) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "author_id"
-    t.index ["author_id"], name: "index_tests_on_author_id"
-    t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["author_id"], name: "index_tests_on_author_id", using: :btree
+    t.index ["category_id"], name: "index_tests_on_category_id", using: :btree
+    t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true, using: :btree
+  end
+
+  create_table "user_badges", force: :cascade do |t|
+    t.integer "badge_id"
+    t.integer "user_id"
+    t.integer "awards_counter", default: 1, null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id", using: :btree
+    t.index ["user_id"], name: "index_user_badges_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,9 +104,11 @@ ActiveRecord::Schema.define(version: 20201223152906) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "type",                   default: "User", null: false
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
 end

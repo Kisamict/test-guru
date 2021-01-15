@@ -14,6 +14,9 @@ en:
       question: 
         create: "Create question"
         update: "Update question"
+      badge:
+        create: "Create badge"
+        update: "Update badge"
 
   buttons: 
     show: "Show"
@@ -31,6 +34,8 @@ en:
     send: "Send"
     feedback: "Feedback"
     save: "Save"
+    edit_test: "Edit test"
+    create_badge: "New badge"
 
   controllers: 
     test_passages:
@@ -64,6 +69,7 @@ en:
         passed: "Congratulations! You passed the test!"
         failed: "We are sorry. Test failed.."
         back: "Back to tests"
+        new_award: "Congratulations! Seems like you've got a new fancy award! Check it out on a badges page!"
       gist:
         success: "Gist was successfully saved into repository. %{url}"
         failure: "Error occurred during saving!"
@@ -72,7 +78,24 @@ en:
         header: "New question for #%{test_title} test"  
       edit: 
         header: "Edit #%{test_title} question"
+    badges:
+      index:
+        completed_level: "Pass all tests with certain level."
+        completed_category: "Pass all tests with certain category."
+        with_first_attempt: "Pass the test with single attempt."
+      edit: 
+        header: "Edit badge"
+      new:
+        header: "Create new badge"
+
+  nav: 
+    items:
+      badge: "Badges"
+
   admin: 
     nav:
       header: "Test Guru Admin panel" 
-      admin_panel: "Admin panel |"
+      admin_panel: "Admin panel"
+      badges: "Badges"
+      tests: "Tests"
+      gists: "Gists"

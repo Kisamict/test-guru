@@ -4,7 +4,6 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_first_question, on: :create
-  before_update :set_next_question
   
   def count_percent
     100.0 / test.questions.count * correct_questions
@@ -18,6 +17,7 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids) 
       self.correct_questions += 1
     end
+    set_next_question
     
     save!
   end

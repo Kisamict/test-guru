@@ -19,6 +19,8 @@ ru:
     send: "Отправить"
     feedback: "Обратная связь"
     save: "Сохранить"
+    edit_test: "Редактировать тест"
+    new_badge: "Новый значок"
 
   helpers:
     submit:
@@ -31,6 +33,9 @@ ru:
       question: 
         create: "Создать вопрос"
         update: "Обновить вопрос"
+      badge:
+        create: "Создать значок"
+        update: "Обновить значок"
     label:
       test:
         title: 'Название'
@@ -69,6 +74,7 @@ ru:
         passed: "Поздравляем! Вы прошли тест!"
         failed: "К сожалению, тест не пройден..."
         back: "Вернуться к тестам"
+        new_award: "Поздравляем! Кажется ты получил новую крутую ачивку! Зацени её в на страничке значков!"
       gist:
         success: "Gist успешно сохранён в репозиторий. %{href}"
         failure: "Во время сохранения произошла ошибка!"
@@ -77,8 +83,27 @@ ru:
         header:  "Новый вопрос для теста: #%{test_title}" 
       edit: 
         header: "Редактировать вопрос по тесту #%{test_title}" 
+    badges:
+      index:
+        completed_level: "Пройти все тесты определенного уровня."
+        completed_category: "Пройти все тесты определенной категории."
+        with_first_attempt: "Пройти тест с первой попытки."
+      edit: 
+        header: "Редактировать значок"
+      new:
+        header: "Создать значок"
+  nav: 
+    items:
+      badge: "Значки"
+
 
   admin: 
     nav:
       header: "Административаня панель Test Guru"
-      admin_panel: "Панель администратора |"
+      admin_panel: "Панель администратора"
+      badges: "Значки"
+      tests: "Тесты"
+      gists: "Гисты"
+    pages:
+      badges:
+        header: "Значки"
